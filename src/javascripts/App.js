@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import icon from './images/icon-white-250.png';
+import icon from '../images/icon-white-250.png';
 
 import Menu from './Menu.js';
-import './App.css';
+import '../stylesheets/App.css';
 
 class App extends Component {
   render() {
