@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "webpack --config config/webpack/webpack.config.dev.js",
+    "release": "webpack --config config/webpack/webpack.config.prod.js",
     "watch": "webpack --watch --config config/webpack/webpack.config.dev.js"
   }
 }
