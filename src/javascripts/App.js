@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { Component } from 'react';
 import icon from '../images/icon-white-250.png';
 

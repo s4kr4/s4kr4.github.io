@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
@@ -18,4 +20,10 @@ export default class MenuItem extends Component {
     );
   }
 }
+
+MenuItem.propTypes = {
+  url: React.PropTypes.string.isRequired,
+  name: React.PropTypes.string.isRequired,
+  text: React.PropTypes.string.isRequired
+};
 
