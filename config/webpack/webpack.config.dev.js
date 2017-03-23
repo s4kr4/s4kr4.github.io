@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -11,26 +12,32 @@ module.exports = {
     filename: '[name].js',
   },
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: ['eslint-loader'],
+        enforce: 'pre'
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['react', 'es2015']
         }
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(jpg|png)$/,
-        loaders: ['url-loader']
+        use: ['url-loader']
       }
     ]
   },
@@ -39,6 +46,14 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
-    new webpack.optimize.UglifyJsPlugin()
-  ]
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          test: /\.jsx?$/,
+          configFile: path.join(__dirname, '../../.eslintrc.json'),
+          cache: false
+        }
+      }
+    })
+  ],
 };
