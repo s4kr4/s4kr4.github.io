@@ -13,7 +13,7 @@ export default class Menu extends Component {
   render() {
     let sites = Sites.map((site) => {
       return (
-        <MenuItem name={site.name} text={site.text} url={site.url} />
+        <MenuItem site={site} />
       );
     });
     return (
