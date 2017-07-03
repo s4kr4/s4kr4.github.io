@@ -1,0 +1,11 @@
+ul.qiita-list {
+
+  max-height: 180px;
+  width: 80%;
+  text-align: left;
+  overflow: auto;
+
+  li.qiita-item {
+    list-style-type: none;
+  }
+}

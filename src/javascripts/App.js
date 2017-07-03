@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import icon from '../images/icon-white-250.png'
 
 import Menu from './Menu.js'
+import GitHubList from './components/GitHubList'
+import QiitaList from './components/QiitaList'
 import '../stylesheets/App.css'
 
 class App extends Component {
@@ -13,6 +15,10 @@ class App extends Component {
           <h2>S4KR4</h2>
         </div>
         <Menu />
+        <ul className="flexbox">
+          <GitHubList />
+          <QiitaList />
+        </ul>
       </div>
     )
   }

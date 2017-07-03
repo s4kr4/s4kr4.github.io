@@ -1,0 +1,13 @@
+ul.github-list {
+
+  max-height: 180px;
+  width: 80%;
+  text-align: left;
+  overflow: auto;
+
+  background-color: #fee;
+
+  li.github-item {
+    list-style-type: none;
+  }
+}
