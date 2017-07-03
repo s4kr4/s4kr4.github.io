@@ -7,9 +7,10 @@ import Sites from '../assets/Sites.json'
 
 export default class Menu extends Component {
   render() {
-    let sites = Sites.map((site) => {
+    let sites = Sites.map((site, i) => {
       return (
         <MenuItem
+          key={i}
           name={site.name}
           text={site.text}
           url={site.url}
