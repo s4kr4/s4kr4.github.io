@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome';
+import React, { Component } from 'react'
+import FontAwesome from 'react-fontawesome'
 
 export default class MenuItem extends Component {
   render() {
@@ -17,11 +17,11 @@ export default class MenuItem extends Component {
           />
         </a>
       </span>
-    );
+    )
   }
 }
 
 MenuItem.propTypes = {
   site: React.PropTypes.object.isRequired,
-};
+}
 

@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-import React, { Component } from 'react';
-import icon from '../images/icon-white-250.png';
+import React, { Component } from 'react'
+import icon from '../images/icon-white-250.png'
 
-import Menu from './Menu.js';
-import '../stylesheets/App.css';
+import Menu from './Menu.js'
+import '../stylesheets/App.css'
 
 class App extends Component {
   render() {
@@ -16,8 +16,8 @@ class App extends Component {
         </div>
         <Menu />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

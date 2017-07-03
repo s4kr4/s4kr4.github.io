@@ -50,7 +50,7 @@ module.exports = {
       options: {
         eslint: {
           test: /\.jsx?$/,
-          configFile: path.join(__dirname, '../../.eslintrc.json'),
+          configFile: path.join(__dirname, '../../.eslintrc'),
           cache: false
         }
       }
