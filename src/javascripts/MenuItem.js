@@ -1,27 +1,33 @@
-'use strict'
+//@flow
 
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
 export default class MenuItem extends Component {
+  props: {
+    name: string,
+    text: string,
+    url: string,
+  }
+
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <span className="menu-item">
-        <a href={this.props.site.url} target="_blank">
+        <a href={this.props.url} target="_blank">
           <FontAwesome
             className="menu-item-icon"
-            name={this.props.site.name}
+            name={this.props.name}
             size="4x"
             tag="i"
-            title={this.props.site.text}
+            title={this.props.text}
           />
         </a>
       </span>
     )
   }
-}
-
-MenuItem.propTypes = {
-  site: React.PropTypes.object.isRequired,
 }
 
