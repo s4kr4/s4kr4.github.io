@@ -4,7 +4,7 @@ import icon from '../images/icon-white-250.png'
 import Menu from './Menu.js'
 import GitHubList from './components/GitHubList'
 import QiitaList from './components/QiitaList'
-import '../stylesheets/App.css'
+import '../stylesheets/App.scss'
 
 class App extends Component {
   render() {
