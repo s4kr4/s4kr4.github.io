@@ -15,10 +15,10 @@ class App extends Component {
           <h2>S4KR4</h2>
         </div>
         <Menu />
-        <ul className="flexbox">
+        <div className="flexbox">
           <GitHubList />
           <QiitaList />
-        </ul>
+        </div>
       </div>
     )
   }

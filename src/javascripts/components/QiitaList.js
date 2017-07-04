@@ -26,7 +26,7 @@ export default class QiitaList extends Component {
 
   render() {
     return (
-      <li className="flexbox-item">
+      <div className="flexbox-item">
         Qiita
         <ul className="qiita-list">
           {this.state.entries.map(entry => {
@@ -39,7 +39,7 @@ export default class QiitaList extends Component {
             )
           })}
         </ul>
-      </li>
+      </div>
     )
   }
 }
