@@ -27,6 +27,7 @@ export default class GitHubList extends Component {
   render() {
     return (
       <li className="flexbox-item">
+        GitHub
         <ul className="github-list">
           {this.state.repos.map(repo => {
             return(
