@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-eslint": "^7.2.3",
+    "ogp-parser": "^0.4.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-fontawesome": "^1.5.0",

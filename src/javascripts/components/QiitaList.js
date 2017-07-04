@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import QiitaItem from './QiitaItem'
+import OGP from './ogp'
 import '../../stylesheets/QiitaList.scss'
 
 export default class QiitaList extends Component {
@@ -31,9 +31,8 @@ export default class QiitaList extends Component {
         <ul className="qiita-list">
           {this.state.entries.map(entry => {
             return(
-              <QiitaItem
+              <OGP
                 key={entry.id}
-                title={entry.title}
                 url={entry.url}
               />
             )

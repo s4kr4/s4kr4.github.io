@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import GitHubItem from './GitHubItem'
+import OGP from './ogp'
 import '../../stylesheets/GitHubList.scss'
 
 export default class GitHubList extends Component {
@@ -31,9 +31,8 @@ export default class GitHubList extends Component {
         <ul className="github-list">
           {this.state.repos.map(repo => {
             return(
-              <GitHubItem
+              <OGP
                 key={repo.id}
-                name={repo.full_name}
                 url={repo.html_url}
               />
             )
