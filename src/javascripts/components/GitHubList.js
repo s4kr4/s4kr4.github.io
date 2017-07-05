@@ -18,13 +18,14 @@ export default class GitHubList extends Component {
       params: {
         sort: 'pushed'
       }
-    }).then(res => {
-        res.data.map(d => {
-          this.setState({
-            repos: this.state.repos.concat(d)
-          })
+    })
+    .then(res => {
+      res.data.map(d => {
+        this.setState({
+          repos: this.state.repos.concat(d)
         })
       })
+    })
   }
 
   render() {
@@ -38,6 +39,7 @@ export default class GitHubList extends Component {
                 key={repo.id}
                 name={repo.full_name}
                 url={repo.html_url}
+                fork={repo.fork}
               />
             )
           })}
