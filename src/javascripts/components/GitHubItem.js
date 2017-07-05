@@ -13,9 +13,9 @@ export default class GitHubItem extends Component {
 
   render() {
     return (
-      <li className="github-item">
+      <div className="github-item">
         <a href={this.props.url} target="_blank">{this.props.name}</a>
-      </li>
+      </div>
     )
   }
 }

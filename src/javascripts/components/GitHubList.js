@@ -26,9 +26,9 @@ export default class GitHubList extends Component {
 
   render() {
     return (
-      <div className="flexbox-item">
+      <div className="flexbox-item github">
         GitHub
-        <ul className="github-list">
+        <div className="github-list">
           {this.state.repos.map(repo => {
             return(
               <GitHubItem
@@ -38,7 +38,7 @@ export default class GitHubList extends Component {
               />
             )
           })}
-        </ul>
+        </div>
       </div>
     )
   }

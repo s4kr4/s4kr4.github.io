@@ -13,9 +13,9 @@ export default class QiitaItem extends Component {
 
   render() {
     return (
-      <li className="qiita-item">
+      <div className="qiita-item">
         <a href={this.props.url} target="_blank">{this.props.title}</a>
-      </li>
+      </div>
     )
   }
 }

@@ -1,14 +1,14 @@
-ul.qiita-list {
+.qiita{
+  .qiita-list {
 
-  max-height: 180px;
-  width: 80%;
-  padding: 10px 5px;
-  border: solid 2px #79B74A;
-  border-radius: 10px/10px;
-  text-align: left;
-  overflow: auto;
+    max-height: 180px;
+    width: 300px;
+    max-width: 100%;
+    padding: 10px 5px;
+    border: solid 2px #79B74A;
+    border-radius: 10px/10px;
+    text-align: left;
+    overflow: auto;
 
-  li.qiita-item {
-    list-style-type: none;
   }
 }
