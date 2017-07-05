@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react'
 
-import MenuItem from './MenuItem.js'
-import Sites from '../assets/Sites.json'
+import MenuItem from './MenuItem'
+import Sites from '../../assets/Sites.json'
 
 export default class Menu extends Component {
   render() {

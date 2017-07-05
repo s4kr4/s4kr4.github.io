@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import icon from '../images/icon-white-250.png'
 
-import Menu from './Menu.js'
-import GitHubList from './components/GitHubList'
-import QiitaList from './components/QiitaList'
-import '../stylesheets/App.scss'
+import Menu from './Menu'
+import GitHubList from './GitHubList'
+import QiitaList from './QiitaList'
+import '../../stylesheets/App.scss'
+import icon from '../../images/icon-white-250.png'
 
 class App extends Component {
   render() {
