@@ -14,8 +14,11 @@ export default class GitHubList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://api.github.com/users/s4kr4/repos')
-      .then(res => {
+    axios.get('https://api.github.com/users/s4kr4/repos', {
+      params: {
+        sort: 'pushed'
+      }
+    }).then(res => {
         res.data.map(d => {
           this.setState({
             repos: this.state.repos.concat(d)
