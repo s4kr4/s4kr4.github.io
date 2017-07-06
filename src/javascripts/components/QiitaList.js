@@ -26,9 +26,9 @@ export default class QiitaList extends Component {
 
   render() {
     return (
-      <div className="flexbox-item qiita">
+      <div className="flexbox-item">
         Qiita
-        <div className="qiita-list">
+        <div className="item-list qiita-list">
           {this.state.entries.map(entry => {
             return(
               <QiitaItem
