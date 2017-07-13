@@ -14,6 +14,7 @@ export default class Menu extends Component {
           name={site.name}
           text={site.text}
           url={site.url}
+          class={site.class}
         />
       )
     })

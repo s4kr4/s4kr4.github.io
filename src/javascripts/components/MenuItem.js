@@ -8,6 +8,7 @@ export default class MenuItem extends Component {
     name: string,
     text: string,
     url: string,
+    class: string,
   }
 
   constructor(props) {
@@ -19,7 +20,7 @@ export default class MenuItem extends Component {
       <span className="menu-item">
         <a href={this.props.url} target="_blank">
           <FontAwesome
-            className="menu-item-icon"
+            className={"menu-item-icon " + this.props.class}
             name={this.props.name}
             size="4x"
             tag="i"
