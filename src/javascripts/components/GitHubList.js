@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import GitHubItem from './GitHubItem'
-import '../../stylesheets/GitHubList.scss'
 
 export default class GitHubList extends Component {
   constructor() {
@@ -31,8 +30,8 @@ export default class GitHubList extends Component {
   render() {
     return (
       <div className="flexbox-item">
-        GitHub
-        <div className="item-list github-list">
+        <div className="flexbox-title">GitHub</div>
+        <ul className="item-list github-list">
           {this.state.repos.map(repo => {
             return(
               <GitHubItem
@@ -44,7 +43,7 @@ export default class GitHubList extends Component {
               />
             )
           })}
-        </div>
+        </ul>
       </div>
     )
   }

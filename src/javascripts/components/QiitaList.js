@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import QiitaItem from './QiitaItem'
-import '../../stylesheets/QiitaList.scss'
 
 export default class QiitaList extends Component {
   constructor() {
@@ -27,8 +26,8 @@ export default class QiitaList extends Component {
   render() {
     return (
       <div className="flexbox-item">
-        Qiita
-        <div className="item-list qiita-list">
+        <div className="flexbox-title">Qiita</div>
+        <ul className="item-list qiita-list">
           {this.state.entries.map(entry => {
             return(
               <QiitaItem
@@ -38,7 +37,7 @@ export default class QiitaList extends Component {
               />
             )
           })}
-        </div>
+        </ul>
       </div>
     )
   }
