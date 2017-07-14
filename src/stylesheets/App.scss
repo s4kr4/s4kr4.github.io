@@ -42,10 +42,10 @@
 
   .flexbox-item {
     margin: 0 10px;
+    width: 300px;
+    max-width: 100%;
 
     .flexbox-title {
-      width: 300px;
-      max-width: 100%;
       background-color: #eee;
       text-align: center;
       border: thin solid #ddd;
@@ -53,17 +53,19 @@
 
     .item-list {
       margin: 0;
-      padding: 10px 0;
-      // max-height: 180px;
-      width: 300px;
-      max-width: 100%;
+      padding-left: 0;
       text-align: left;
       overflow: auto;
+      list-style-type: none;
 
       .item {
         border: thin solid #ddd;
-        padding: 3px 0;
+        padding: 3px;
       }
     }
   }
+}
+
+.repo-fork-icon {
+  margin: 0 0 0 5px;
 }
