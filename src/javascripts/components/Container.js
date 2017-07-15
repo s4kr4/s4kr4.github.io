@@ -7,7 +7,7 @@ import GitHubList from './GitHubList'
 import QiitaList from './QiitaList'
 import '../../stylesheets/App.scss'
 
-class App extends Component {
+export default class Container extends Component {
   render() {
     return (
       <div className="container">
@@ -22,5 +22,3 @@ class App extends Component {
     )
   }
 }
-
-export default App
