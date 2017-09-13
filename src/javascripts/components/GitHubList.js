@@ -18,13 +18,13 @@ export default class GitHubList extends Component {
         sort: 'pushed'
       }
     })
-    .then(res => {
-      res.data.map(d => {
-        this.setState({
-          repos: this.state.repos.concat(d)
+      .then(res => {
+        res.data.map(d => {
+          this.setState({
+            repos: this.state.repos.concat(d)
+          })
         })
       })
-    })
   }
 
   render() {

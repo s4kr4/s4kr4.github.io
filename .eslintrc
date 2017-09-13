@@ -4,12 +4,12 @@
     "node": true,
     "browser": true,
   },
-  "ecmaFeatures": {
-    "jsx": true
-  },
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    },
   },
   "extends": [
     "eslint:recommended",

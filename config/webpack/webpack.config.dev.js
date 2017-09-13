@@ -24,16 +24,11 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['react', 'es2015'],
-          plugins: ['transform-flow-strip-types'],
+          presets: ['react', 'es2015', 'flow'],
         }
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
