@@ -1,0 +1,60 @@
+const {
+  FuseBox,
+  CSSPlugin,
+  SassPlugin,
+  BabelPlugin,
+  QuantumPlugin,
+  WebIndexPlugin,
+  ImageBase64Plugin,
+  JSONPlugin,
+  Sparky
+} = require('fuse-box')
+
+let fuse, app, vendor, isProduction
+
+Sparky.task('config', () => {
+  fuse = new FuseBox({
+    homeDir: 'src/',
+    sourceMaps: !isProduction,
+    hash: isProduction,
+    output: 'public/$name.js',
+    target: 'browser',
+    plugins: [
+      CSSPlugin(),
+      [SassPlugin(), CSSPlugin()],
+      ImageBase64Plugin(),
+      JSONPlugin(),
+      WebIndexPlugin({
+        template: 'src/index.html'
+      }),
+      [
+        BabelPlugin({
+          sourceMaps: !isProduction,
+          presets: ['es2015', 'react', 'flow'],
+        }),
+      ],
+      isProduction && QuantumPlugin({
+        bakeApiIntoBundle: 'vendor',
+        treeshake: true,
+        uglify: true,
+      }),
+    ],
+  })
+
+  vendor = fuse.bundle('vendor').instructions('~ javascripts/index.js')
+  app = fuse.bundle('bundle').instructions('> [javascripts/index.js]')
+})
+
+Sparky.task('clean', () => Sparky.src('public/').clean('public/'))
+Sparky.task('copy', () => Sparky.src('index.html', {base: 'public/'}).dest('./'))
+Sparky.task('prod-env', () => { isProduction = true })
+Sparky.task('build', ['prod-env', 'clean', 'config'], () => fuse.run())
+Sparky.task('release', ['build', 'copy'], () => {})
+
+Sparky.task('default', ['clean', 'config'], () => {
+  fuse.dev({
+    port: 8000,
+  })
+  app.watch().hmr()
+  return fuse.run()
+})

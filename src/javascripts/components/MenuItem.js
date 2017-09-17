@@ -1,6 +1,7 @@
 //@flow
 
-import React, { Component } from 'react'
+import * as React from 'react'
+import { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
 export default class MenuItem extends Component {
@@ -31,4 +32,3 @@ export default class MenuItem extends Component {
     )
   }
 }
-
