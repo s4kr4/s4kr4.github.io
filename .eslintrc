@@ -8,7 +8,7 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
-        "jsx": true
+      "jsx": true,
     },
   },
   "extends": [
@@ -26,7 +26,7 @@
   ],
   "settings": {
     "flowtype": {
-      onlyFilesWithFlowAnnotation: true,
+      "onlyFilesWithFlowAnnotation": true,
 	},
   },
 }

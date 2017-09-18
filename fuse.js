@@ -10,6 +10,8 @@ const {
   Sparky
 } = require('fuse-box')
 
+const eslinter = require('fuse-box-eslint-plugin')
+
 let fuse, app, vendor, isProduction
 
 Sparky.task('config', () => {
@@ -19,7 +21,12 @@ Sparky.task('config', () => {
     hash: isProduction,
     output: 'public/$name.js',
     target: 'browser',
+    experimentalFeatures: true,
     plugins: [
+      BabelPlugin({
+        sourceMaps: !isProduction,
+        presets: ['es2015', 'react', 'flow'],
+      }),
       CSSPlugin(),
       [SassPlugin(), CSSPlugin()],
       ImageBase64Plugin(),
@@ -27,12 +34,6 @@ Sparky.task('config', () => {
       WebIndexPlugin({
         template: 'src/index.html'
       }),
-      [
-        BabelPlugin({
-          sourceMaps: !isProduction,
-          presets: ['es2015', 'react', 'flow'],
-        }),
-      ],
       isProduction && QuantumPlugin({
         bakeApiIntoBundle: 'vendor',
         treeshake: true,
