@@ -33,15 +33,14 @@ Sparky.task('config', () => {
         template: 'src/index.html'
       }),
       isProduction && QuantumPlugin({
-        bakeApiIntoBundle: 'vendor',
+        bakeApiIntoBundle: 'bundle',
         treeshake: true,
         uglify: true,
       }),
     ],
   })
 
-  vendor = fuse.bundle('vendor').instructions('~ javascripts/index.js')
-  app = fuse.bundle('bundle').instructions('> [javascripts/index.js]')
+  app = fuse.bundle('bundle').instructions('> javascripts/index.js')
 })
 
 Sparky.task('clean', () => Sparky.src('public/').clean('public/'))
