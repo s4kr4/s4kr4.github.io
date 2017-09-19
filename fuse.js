@@ -10,8 +10,6 @@ const {
   Sparky
 } = require('fuse-box')
 
-const eslinter = require('fuse-box-eslint-plugin')
-
 let fuse, app, vendor, isProduction
 
 Sparky.task('config', () => {
