@@ -25,21 +25,25 @@ export default class QiitaList extends Component {
   }
 
   render() {
-    return (
-      <div className="flexbox-item">
-        <div className="flexbox-title">Qiita</div>
-        <ul className="item-list qiita-list">
-          {this.state.entries.map(entry => {
-            return(
-              <QiitaItem
-                key={entry.id}
-                title={entry.title}
-                url={entry.url}
-              />
-            )
-          })}
-        </ul>
-      </div>
-    )
+    if (this.state.entries.length !== 0) {
+      return (
+        <div className="flexbox-item">
+          <div className="flexbox-title">Qiita</div>
+          <ul className="item-list qiita-list">
+            {this.state.entries.map(entry => {
+              return(
+                <QiitaItem
+                  key={entry.id}
+                  title={entry.title}
+                  url={entry.url}
+                />
+              )
+            })}
+          </ul>
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 }

@@ -43,21 +43,25 @@ export default class GitHubList extends Component {
       )
     })
 
-    return (
-      <div className="flexbox-item">
-        <div className="flexbox-title">GitHub</div>
-        <ul className="item-list github-list">
-          {
-            items.slice(0, this.state.marker)
-          }
-          {
-            items.length > this.state.marker
-              ? <li className="item load-menu" onClick={this.loadMoreList}>MORE</li>
-              : ''
-          }
-        </ul>
-      </div>
-    )
+    if (this.state.repos.length !== 0) {
+      return (
+        <div className="flexbox-item">
+          <div className="flexbox-title">GitHub</div>
+          <ul className="item-list github-list">
+            {
+              items.slice(0, this.state.marker)
+            }
+            {
+              items.length > this.state.marker
+                ? <li className="item load-menu" onClick={this.loadMoreList}>MORE</li>
+                : ''
+            }
+          </ul>
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 
   loadMoreList() {
