@@ -1,7 +1,6 @@
 // @flow
 
-import * as React from 'react'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
 export default class GitHubItem extends Component {
