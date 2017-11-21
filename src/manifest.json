@@ -1,0 +1,10 @@
+{
+  "name": "s4kr4.com",
+  "short_name": "s4kr4",
+  "description": "s4kr4.com",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#222",
+  "theme_color": "#222"
+}
