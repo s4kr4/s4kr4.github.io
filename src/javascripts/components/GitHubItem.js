@@ -46,7 +46,7 @@ export default class GitHubItem extends Component {
           ? this.forkIcon()
           : this.repoIcon()
         }
-        <a href={this.props.url} target="_blank">{this.props.name}</a>
+        <a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.name}</a>
       </li>
     )
   }

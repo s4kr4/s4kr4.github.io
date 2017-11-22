@@ -18,7 +18,7 @@ export default class MenuItem extends Component {
   render() {
     return (
       <span className="menu-item">
-        <a href={this.props.url} target="_blank">
+        <a href={this.props.url} target="_blank" rel="noopener noreferrer">
           <FontAwesome
             className={"menu-item-icon " + this.props.class}
             name={this.props.name}
