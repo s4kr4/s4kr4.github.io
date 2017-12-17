@@ -12,6 +12,10 @@ const {
 
 let fuse, app, isProduction
 
+const CSSSettings = {
+  minify: true
+}
+
 Sparky.task('config', () => {
   fuse = new FuseBox({
     homeDir: 'src/',
@@ -24,8 +28,8 @@ Sparky.task('config', () => {
         sourceMaps: !isProduction,
         presets: ['es2015', 'react', 'flow'],
       }),
-      CSSPlugin(),
-      [SassPlugin(), CSSPlugin()],
+      CSSPlugin(CSSSettings),
+      [SassPlugin(), CSSPlugin(CSSSettings)],
       ImageBase64Plugin(),
       JSONPlugin(),
       WebIndexPlugin({

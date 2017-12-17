@@ -5,7 +5,6 @@ import Footer from './Footer'
 import Menu from './Menu'
 import GitHubList from './GitHubList'
 import QiitaList from './QiitaList'
-import '../../stylesheets/App.scss'
 
 export default class Container extends Component {
   render() {
