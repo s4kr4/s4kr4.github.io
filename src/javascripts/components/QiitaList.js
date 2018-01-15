@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
-import QiitaItem from './QiitaItem'
+import ListItem from './ListItem'
 
 export default class QiitaList extends Component {
   constructor() {
@@ -31,9 +31,9 @@ export default class QiitaList extends Component {
           <ul className="item-list qiita-list">
             {this.state.entries.map(entry => {
               return(
-                <QiitaItem
+                <ListItem
                   key={entry.id}
-                  title={entry.title}
+                  name={entry.title}
                   url={entry.url}
                 />
               )

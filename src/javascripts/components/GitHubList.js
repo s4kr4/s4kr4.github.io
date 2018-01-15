@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import GitHubItem from './GitHubItem'
+import ListItem from './ListItem'
 
 export default class GitHubList extends Component {
   constructor() {
@@ -32,15 +32,25 @@ export default class GitHubList extends Component {
 
   render() {
     const items = this.state.repos.map(repo => {
-      return(
-        <GitHubItem
-          className="item"
-          key={repo.id}
-          name={repo.full_name}
-          url={repo.html_url}
-          fork={repo.fork}
-        />
-      )
+      if (repo.fork) {
+        return(
+          <ListItem
+            key={repo.id}
+            name={repo.full_name}
+            url={repo.html_url}
+            type='fork'
+          />
+        )
+      } else {
+        return(
+          <ListItem
+            key={repo.id}
+            name={repo.full_name}
+            url={repo.html_url}
+            type='repo'
+          />
+        )
+      }
     })
 
     if (this.state.repos.length !== 0) {

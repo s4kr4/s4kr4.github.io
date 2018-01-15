@@ -22,7 +22,7 @@
     "flow-bin": "^0.63.1",
     "fuse-box": "^3.0.2",
     "node-sass": "^4.7.2",
-    "uglify-js": "^3.3.7"
+    "uglify-es": "^3.3.7"
   },
   "scripts": {
     "build": "node fuse build",
