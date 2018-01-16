@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import ListItem from './ListItem'
+import ItemList from './ItemList'
 
 export default class GitHubList extends Component {
   constructor() {
     super()
 
     this.state = {
-      repos: [],
-      marker: 10,
+      items: [],
     }
-
-    this.loadMoreList = this.loadMoreList.bind(this)
   }
 
   componentDidMount() {
@@ -22,61 +19,27 @@ export default class GitHubList extends Component {
       }
     })
       .then(res => {
-        res.data.map(d => {
+        res.data.map(data => {
+          let type = ''
+          if (data.fork) {
+            type = 'fork'
+          } else {
+            type = 'repo'
+          }
+
           this.setState({
-            repos: this.state.repos.concat(d)
+            items: this.state.items.concat({
+              id: data.id,
+              name: data.full_name,
+              url: data.html_url,
+              type: type,
+            })
           })
         })
       })
   }
 
   render() {
-    const items = this.state.repos.map(repo => {
-      if (repo.fork) {
-        return(
-          <ListItem
-            key={repo.id}
-            name={repo.full_name}
-            url={repo.html_url}
-            type='fork'
-          />
-        )
-      } else {
-        return(
-          <ListItem
-            key={repo.id}
-            name={repo.full_name}
-            url={repo.html_url}
-            type='repo'
-          />
-        )
-      }
-    })
-
-    if (this.state.repos.length !== 0) {
-      return (
-        <div className="flexbox-item">
-          <div className="flexbox-title">GitHub</div>
-          <ul className="item-list github-list">
-            {
-              items.slice(0, this.state.marker)
-            }
-            {
-              items.length > this.state.marker
-                ? <li className="item load-menu" onClick={this.loadMoreList}>MORE</li>
-                : ''
-            }
-          </ul>
-        </div>
-      )
-    } else {
-      return null
-    }
-  }
-
-  loadMoreList() {
-    this.setState({
-      marker: this.state.marker + 10
-    })
+    return <ItemList source="GitHub" items={this.state.items} />
   }
 }

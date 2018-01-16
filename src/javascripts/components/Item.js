@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Icon from './Icon'
 
-const ListItem = (props) => {
+const Item = (props) => {
   return(
     <li className="item">
       <Icon type={props.type} />
@@ -11,4 +11,4 @@ const ListItem = (props) => {
   )
 }
 
-export default ListItem
+export default Item
