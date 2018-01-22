@@ -1,16 +1,34 @@
+// @flow
+
 import React, {Component} from 'react'
 
 import Item from './Item'
 
-export default class ItemList extends Component {
+type Props = {
+  source: string,
+  items: Array<{
+    id: number,
+    name: string,
+    url: string,
+    type: string,
+  }>,
+}
+
+type State = {
+  marker: number,
+}
+
+export default class ItemList extends Component<Props, State> {
   constructor() {
     super()
 
-    this.state = {
+    const self: any = this
+
+    self.state = {
       marker: 10,
     }
 
-    this.loadMoreList = this.loadMoreList.bind(this)
+    self.loadMoreList = this.loadMoreList.bind(this)
   }
 
   render () {

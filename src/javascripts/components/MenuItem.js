@@ -3,16 +3,16 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
-export default class MenuItem extends Component {
-  props: {
-    name: string,
-    text: string,
-    url: string,
-    class: string,
-  }
+type Props = {
+  name: string,
+  text: string,
+  url: string,
+  class: string,
+}
 
-  constructor(props) {
-    super(props)
+export default class MenuItem extends Component<Props> {
+  constructor() {
+    super()
   }
 
   render() {

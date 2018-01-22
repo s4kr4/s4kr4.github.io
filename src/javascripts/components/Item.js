@@ -1,8 +1,16 @@
-import React, { Component } from 'react'
+// @flow
+
+import React from 'react'
 
 import Icon from './Icon'
 
-const Item = (props) => {
+type Props = {
+  type: string,
+  url: string,
+  name: string,
+}
+
+const Item = (props: Props) => {
   return(
     <li className="item">
       <Icon type={props.type} />

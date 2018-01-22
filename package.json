@@ -28,6 +28,7 @@
     "build": "node fuse build",
     "release": "node fuse release",
     "watch": "node fuse",
-    "lint": "eslint -c .eslintrc src/javascripts"
+    "lint": "eslint -c .eslintrc src/javascripts",
+    "flow": "flow"
   }
 }
