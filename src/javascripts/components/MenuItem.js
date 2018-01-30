@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react'
+import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
 type Props = {
@@ -10,23 +10,19 @@ type Props = {
   class: string,
 }
 
-export default class MenuItem extends Component<Props> {
-  constructor() {
-    super()
-  }
-
-  render() {
-    return (
-      <span className="menu-item">
-        <a href={this.props.url} target="_blank" rel="noopener noreferrer" aria-label={this.props.text}>
-          <FontAwesome
-            className={"menu-item-icon " + this.props.class}
-            name={this.props.name}
-            size="4x"
-            tag="i"
-          />
-        </a>
-      </span>
-    )
-  }
+const MenuItem = (props: Props) => {
+  return (
+    <span className="menu-item">
+      <a href={props.url} target="_blank" rel="noopener noreferrer" aria-label={props.text}>
+        <FontAwesome
+          className={"menu-item-icon " + props.class}
+          name={props.name}
+          size="4x"
+          tag="i"
+        />
+      </a>
+    </span>
+  )
 }
+
+export default MenuItem
