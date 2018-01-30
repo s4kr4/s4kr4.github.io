@@ -18,13 +18,12 @@ export default class MenuItem extends Component<Props> {
   render() {
     return (
       <span className="menu-item">
-        <a href={this.props.url} target="_blank" rel="noopener noreferrer">
+        <a href={this.props.url} target="_blank" rel="noopener noreferrer" aria-label={this.props.text}>
           <FontAwesome
             className={"menu-item-icon " + this.props.class}
             name={this.props.name}
             size="4x"
             tag="i"
-            title={this.props.text}
           />
         </a>
       </span>
