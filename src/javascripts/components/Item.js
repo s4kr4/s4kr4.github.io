@@ -12,7 +12,7 @@ type Props = {
 
 const Item = (props: Props) => {
   return(
-    <li className="item">
+    <li className="works-ItemList_Item">
       <Icon type={props.type} />
       <a href={props.url} target="_blank" rel="noopener noreferrer">{props.name}</a>
     </li>

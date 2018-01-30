@@ -3,18 +3,14 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Menu from './Menu'
-import GitHubList from './GitHubList'
-import QiitaList from './QiitaList'
+import Works from './Works'
 
 const Container = () => {
   return (
     <div className="container">
       <Header />
       <Menu />
-      <div className="flexbox">
-        <GitHubList />
-        <QiitaList />
-      </div>
+      <Works />
       <Footer />
     </div>
   )

@@ -46,13 +46,13 @@ export default class ItemList extends Component<Props, State> {
 
     if (this.props.items.length !== 0) {
       return (
-        <div className="flexbox-item">
-          <div className="flexbox-title">{this.props.source}</div>
-          <ul className="item-list">
+        <div className="works-ItemList">
+          <div className="works-ItemList_Title">{this.props.source}</div>
+          <ul className="works-ItemList_Items">
             {items.slice(0, this.state.marker)}
             {
               items.length > this.state.marker
-                ? <li className="item load-menu" onClick={this.loadMoreList}>MORE</li>
+                ? <li className="works-ItemList_Item load-menu" onClick={this.loadMoreList}>MORE</li>
                 : ''
             }
           </ul>
