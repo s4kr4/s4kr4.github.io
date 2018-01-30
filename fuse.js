@@ -47,10 +47,9 @@ Sparky.task('config', () => {
 })
 
 Sparky.task('clean', () => Sparky.src('public/').clean('public/'))
-Sparky.task('copy', () => Sparky.src('index.html', {base: 'public'}).dest('.'))
+Sparky.task('build', ['clean', 'config'], () => fuse.run())
 Sparky.task('prod-env', () => { isProduction = true })
-Sparky.task('build', ['prod-env', 'clean', 'config'], () => fuse.run())
-Sparky.task('release', ['build', 'copy'], () => Sparky.src('service-worker.js', {base: 'src'}).dest('.'))
+Sparky.task('release', ['prod-env', 'build'], () => {})
 
 Sparky.task('default', ['clean', 'config'], () => {
   fuse.dev({
