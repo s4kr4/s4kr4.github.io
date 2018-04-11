@@ -34,30 +34,29 @@ export default class ItemList extends Component<Props, State> {
   render () {
     // Determine item's type(Repository, Fork repository, entry)
     const items = this.props.items.map(item => {
-      return(
-        <Item
-          key={item.id}
-          name={item.name}
-          url={item.url}
-          type={item.type}
-        />
-      )
+      return pug`
+        Item(
+          key=item.id
+          name=item.name
+          url=item.url
+          type=item.type
+        )
+      `
     })
 
     if (this.props.items.length !== 0) {
-      return (
-        <div className="works-ItemList">
-          <div className="works-ItemList_Title">{this.props.source}</div>
-          <ul className="works-ItemList_Items">
-            {items.slice(0, this.state.marker)}
-            {
+      return pug`
+        .works-ItemList
+          .works-ItemList_Title
+            = this.props.source
+          ul.works-ItemList_Items
+            ${items.slice(0, this.state.marker)}
+            ${
               items.length > this.state.marker
                 ? <li className="works-ItemList_Item load-menu" onClick={this.loadMoreList}>MORE</li>
                 : ''
             }
-          </ul>
-        </div>
-      )
+      `
     } else {
       return null
     }

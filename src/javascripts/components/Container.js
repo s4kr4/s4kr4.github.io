@@ -6,13 +6,12 @@ import Menu from './Menu'
 import Works from './Works'
 
 const Container = () => {
-  return (
-    <div className="container">
-      <Header />
-      <Menu />
-      <Works />
-      <Footer />
-    </div>
-  )
+  return pug`
+    .container
+      Header
+      Menu
+      Works
+      Footer
+  `
 }
 export default Container

@@ -27,6 +27,7 @@ Sparky.task('config', () => {
       BabelPlugin({
         sourceMaps: !isProduction,
         presets: ['es2015', 'react', 'flow'],
+        plugins: ['transform-react-pug', 'transform-react-jsx']
       }),
       CSSPlugin(CSSSettings),
       [SassPlugin(), CSSPlugin(CSSSettings)],

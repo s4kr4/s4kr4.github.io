@@ -40,6 +40,8 @@ export default class GitHubList extends Component {
   }
 
   render() {
-    return <ItemList source="GitHub" items={this.state.items} />
+    return pug`
+      ItemList(source="GitHub" items=this.state.items)
+    `
   }
 }

@@ -28,6 +28,8 @@ export default class QiitaList extends Component {
   }
 
   render() {
-    return <ItemList source="Qiita" items={this.state.items} />
+    return pug`
+      ItemList(source="Qiita" items=this.state.items)
+    `
   }
 }

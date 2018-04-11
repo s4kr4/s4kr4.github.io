@@ -4,12 +4,11 @@ import GitHubList from './GitHubList'
 import QiitaList from './QiitaList'
 
 const Works = () => {
-  return (
-    <div className="works">
-      <GitHubList />
-      <QiitaList />
-    </div>
-  )
+  return pug`
+    .works
+      GitHubList
+      QiitaList
+  `
 }
 
 export default Works

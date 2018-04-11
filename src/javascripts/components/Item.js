@@ -11,12 +11,12 @@ type Props = {
 }
 
 const Item = (props: Props) => {
-  return(
-    <li className="works-ItemList_Item">
-      <Icon type={props.type} />
-      <a href={props.url} target="_blank" rel="noopener noreferrer">{props.name}</a>
-    </li>
-  )
+  return pug`
+    li.works-ItemList_Item
+      Icon(type=props.type)
+      a(href=props.url target="_blank" rel="noopener noreferrer")
+        = props.name
+  `
 }
 
 export default Item
