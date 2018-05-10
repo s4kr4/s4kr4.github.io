@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   devtool: 'inline-source-map',
   entry: {
     bundle: path.join(__dirname, '../../src/typescript/index.tsx'),
@@ -15,19 +16,20 @@ module.exports = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'awesome-typescript-loader',
+        use: 'awesome-typescript-loader',
       },
       {
         enforce: 'pre',
         test: /\.js$/,
-        loader: 'source-map-loader',
-      }
+        use: 'source-map-loader',
+      },
     ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js']
   },
   devServer: {
+    host: 'localhost',
     port: 9000,
     contentBase: path.join(__dirname, '../../public'),
   },
