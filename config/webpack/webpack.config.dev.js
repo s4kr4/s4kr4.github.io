@@ -1,55 +1,34 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
   devtool: 'inline-source-map',
   entry: {
-    bundle: './src/javascripts/index.js',
+    bundle: path.join(__dirname, '../../src/typescript/index.tsx'),
   },
   output: {
-    path: path.join(__dirname, '../../public/javascripts'),
+    path: path.join(__dirname, '../../public'),
     filename: '[name].js',
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: ['eslint-loader'],
-        enforce: 'pre'
+        loader: 'awesome-typescript-loader',
       },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['react', 'es2015', 'flow'],
-        }
-      },
-      {
-        test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.(jpg|png)$/,
-        use: ['url-loader']
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
-  plugins: [
-    new ExtractTextPlugin('[name].css'),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        eslint: {
-          test: /\.jsx?$/,
-          configFile: path.join(__dirname, '../../.eslintrc'),
-          cache: false
-        }
-      }
-    })
-  ],
+  devServer: {
+    port: 9000,
+    contentBase: path.join(__dirname, '../../public'),
+  },
 };
