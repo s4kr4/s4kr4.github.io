@@ -24,6 +24,12 @@
     "@types/node" "*"
     "@types/react" "*"
 
+"@types/react-fontawesome@^1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@types/react-fontawesome/-/react-fontawesome-1.6.3.tgz#03d00dd940d2eb9dc3f21f4b9a972789a95dc8cf"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.3.14":
   version "16.3.14"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.14.tgz#f90ac6834de172e13ecca430dcb6814744225d36"
