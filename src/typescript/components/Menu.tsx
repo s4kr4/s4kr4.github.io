@@ -1,9 +1,16 @@
 import * as React from 'react'
+import styled from '../styled-components'
 
 import MenuItem from './MenuItem'
 import Sites from '../../assets/Sites'
 
-const Menu = () => {
+interface Props {
+  className?: string;
+}
+
+const Menu: React.SFC<Props> = ({
+  className,
+}) => {
   const sites = Sites.map((site, i) => {
     return (
       <MenuItem
@@ -17,10 +24,14 @@ const Menu = () => {
   })
 
   return (
-    <div className="menu">
+    <div className={className}>
       {sites}
     </div>
   )
 }
 
-export default Menu
+export default styled(Menu)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

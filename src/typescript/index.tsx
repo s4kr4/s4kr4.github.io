@@ -1,7 +1,20 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-import { Container } from './components/Container'
+import { injectGlobal } from './styled-components'
+import Container from './components/Container'
+
+injectGlobal`
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+`
 
 ReactDOM.render(
   <Container />,
