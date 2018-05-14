@@ -5,12 +5,10 @@ import Menu from './Menu'
 import Footer from './Footer'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
-const Container: React.SFC<Props> = ({
-  className,
-}) => {
+const Container: React.SFC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <Header />

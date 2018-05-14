@@ -5,12 +5,10 @@ import MenuItem from './MenuItem'
 import Sites from '../../assets/Sites'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
-const Menu: React.SFC<Props> = ({
-  className,
-}) => {
+const Menu: React.SFC<Props> = ({ className }) => {
   const sites = Sites.map((site, i) => {
     return (
       <MenuItem
@@ -23,11 +21,7 @@ const Menu: React.SFC<Props> = ({
     )
   })
 
-  return (
-    <div className={className}>
-      {sites}
-    </div>
-  )
+  return <div className={className}>{sites}</div>
 }
 
 export default styled(Menu)`

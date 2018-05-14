@@ -2,12 +2,10 @@ import * as React from 'react'
 import styled from '../styled-components'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
-const Header: React.SFC<Props> = ({
-  className,
-}) => (
+const Header: React.SFC<Props> = ({ className }) => (
   <div className={className}>
     <h2>s4kr4</h2>
   </div>
