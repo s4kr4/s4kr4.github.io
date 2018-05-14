@@ -1,9 +1,9 @@
 type Site = {
-  name: string;
-  text: string;
-  url: string;
-  option: string;
-  modifier: string;
+  name: string
+  text: string
+  url: string
+  option: string
+  modifier: string
 }
 
 const Sites: Site[] = [

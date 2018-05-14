@@ -16,7 +16,4 @@ injectGlobal`
   }
 `
 
-ReactDOM.render(
-  <Container />,
-  document.getElementById('root')
-)
+ReactDOM.render(<Container />, document.getElementById('root'))
