@@ -22,6 +22,7 @@ module.exports = {
             options: {
               configFile: 'tslint.json',
               tsConfigFile: 'tsconfig.json',
+              typeCheck: true,
               fix: true,
             },
           },
