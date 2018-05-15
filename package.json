@@ -38,7 +38,7 @@
     "build": "webpack --config config/webpack/webpack.config.dev.js",
     "release": "node fuse release",
     "start": "webpack-dev-server --config config/webpack/webpack.config.dev.js",
-    "format": "tslint --fix --project . --config tslint.json src/**/*.tsx src/**/*.ts",
+    "format": "tslint --fix --project . src/**/*.tsx src/**/*.ts",
     "flow": "flow"
   }
 }
