@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import Header from './Header'
 import Menu from './Menu'
+import Works from './Works'
 import Footer from './Footer'
 
 interface Props {
@@ -13,6 +14,7 @@ const Container: React.SFC<Props> = ({ className }) => {
     <div className={className}>
       <Header />
       <Menu />
+      <Works />
       <Footer />
     </div>
   )

@@ -3,20 +3,20 @@ import * as React from 'react'
 import Icon from './Icon'
 
 interface Props {
-  type: string,
-  url: string,
-  name: string,
+  className?: string
+  type?: string
+  url: string
+  name: string
 }
 
-const Item: React.SFC<Props> = ({
-  type,
-  url,
-  name
-}) => {
+const Item: React.SFC<Props> = ({ className, type, url, name }) => {
+  const icon = type ? <Icon type={type} /> : null
   return (
-    <li>
-      <Icon type={type} />
-      <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+    <li className={className}>
+      {icon}
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        {name}
+      </a>
     </li>
   )
 }
