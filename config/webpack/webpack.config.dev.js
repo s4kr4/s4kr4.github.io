@@ -20,8 +20,6 @@ module.exports = {
           {
             loader: 'tslint-loader',
             options: {
-              configFile: 'tslint.json',
-              tsConfigFile: 'tsconfig.json',
               typeCheck: true,
               fix: true,
             },
