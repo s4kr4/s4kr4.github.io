@@ -1,6 +1,6 @@
 import * as React from 'react'
-import styled from '../styled-components'
 
+import styled from '../styled-components'
 import MenuItem from './MenuItem'
 import Sites from '../../assets/Sites'
 
@@ -25,6 +25,7 @@ const Menu: React.SFC<Props> = ({ className }) => {
 }
 
 export default styled(Menu)`
+  margin: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;

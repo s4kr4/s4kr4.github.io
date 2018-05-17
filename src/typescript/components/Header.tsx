@@ -15,8 +15,28 @@ const Header: React.SFC<Props> = ({ className }) => (
 )
 
 export default styled(Header)`
-  height: 3rem;
-  width: 100%;
+  height: 150px;
+  padding: 20px;
   background: #222;
   color: white;
+
+  h2 {
+    margin: 1em 0;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .logo {
+    animation: logo-spin infinite 20s linear;
+    height: 80px;
+  }
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `

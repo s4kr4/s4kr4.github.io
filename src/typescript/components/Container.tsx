@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import styled from '../styled-components'
 import Header from './Header'
 import Menu from './Menu'
 import Works from './Works'
@@ -20,4 +21,6 @@ const Container: React.SFC<Props> = ({ className }) => {
   )
 }
 
-export default Container
+export default styled(Container)`
+  text-align: center;
+`
