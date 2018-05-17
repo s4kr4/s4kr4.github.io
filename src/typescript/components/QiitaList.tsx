@@ -21,8 +21,8 @@ export default class QiitaList extends React.Component<Props, State> {
     }
   }
 
-  componentDidMount() {
-    axios
+  async componentDidMount() {
+    await axios
       .get('https://qiita.com/api/v2/users/s4kr4/items')
       .then((res: any) => {
         res.data.map((data: any) => {

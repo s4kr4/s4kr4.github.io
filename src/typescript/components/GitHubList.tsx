@@ -22,8 +22,8 @@ export default class GitHubList extends React.Component<Props, State> {
     }
   }
 
-  componentDidMount() {
-    axios
+  async componentDidMount() {
+    await axios
       .get('https://api.github.com/users/s4kr4/repos', {
         params: {
           sort: 'pushed'
