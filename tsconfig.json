@@ -18,6 +18,9 @@
       "dom"
     ]
   },
+  "files": [
+    "@types/images.d.ts"
+  ],
   "include": [
     "./src/**/*"
   ],

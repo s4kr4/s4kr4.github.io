@@ -36,6 +36,10 @@ module.exports = {
         test: /\.js$/,
         use: 'source-map-loader',
       },
+      {
+        test: /\.(jpg|png)$/,
+        use: 'url-loader',
+      },
     ]
   },
   resolve: {
