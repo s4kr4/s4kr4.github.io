@@ -1,51 +1,42 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: {
-    bundle: './src/javascripts/index.js',
+    bundle: path.join(__dirname, '../../src/typescript/index.tsx'),
   },
   output: {
-    path: path.join(__dirname, '../../public/javascripts'),
+    path: path.join(__dirname, '../../public'),
     filename: '[name].js',
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'tslint-loader',
+            options: {
+              typeCheck: true,
+              fix: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015'],
-          plugins: ['transform-flow-strip-types'],
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: 'awesome-typescript-loader',
       },
       {
         test: /\.(jpg|png)$/,
-        use: ['url-loader']
-      }
+        use: 'url-loader',
+      },
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js']
   },
-  plugins: [
-    new ExtractTextPlugin('[name].css'),
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify('production'),
-        BROWSER: JSON.stringify(true)
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin()
-  ]
 };
