@@ -76,6 +76,7 @@ export default styled(ItemList)`
   .title {
     background-color: #222;
     text-align: center;
+    font-size: 1.2em;
     color: #fff;
   }
 
