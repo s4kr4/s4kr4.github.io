@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import styled from '../styled-components'
 import MenuItem from './MenuItem'
-import Sites from '../../assets/Sites'
+import Sites from '../assets/Sites'
 
 interface Props {
   className?: string
