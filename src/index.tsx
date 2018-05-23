@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-import App from './App'
+import Container from './components/Container'
 import registerServiceWorker from './registerServiceWorker'
 import { injectGlobal } from './styled-components'
 
@@ -13,5 +13,5 @@ injectGlobal`
   }
 `
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
+ReactDOM.render(<Container />, document.getElementById('root') as HTMLElement)
 registerServiceWorker()
