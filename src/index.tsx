@@ -11,6 +11,11 @@ injectGlobal`
     padding: 0;
     font-family: sans-serif;
   }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 `
 
 ReactDOM.render(<Container />, document.getElementById('root') as HTMLElement)
