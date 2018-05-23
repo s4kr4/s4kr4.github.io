@@ -1,22 +1,38 @@
-import * as React from 'react';
-import './App.css';
+import * as React from 'react'
 
-import logo from './logo.svg';
+import styled from './styled-components'
 
-class App extends React.Component {
+interface IProps {
+  className?: string
+}
+
+class App extends React.Component<IProps> {
+  constructor(props: IProps) {
+    super(props)
+  }
+
   public render() {
     return (
-      <div className="App">
+      <div className={this.props.className}>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">s4kr4</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default styled(App)`
+  text-align: center;
+
+  .App-header {
+    background-color: #222;
+    height: 3em;
+    padding: 20px;
+    color: white;
+  }
+
+  .App-title {
+    font-size: 1.5em;
+  }
+`
