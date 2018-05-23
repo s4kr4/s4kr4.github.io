@@ -12,6 +12,7 @@ const Menu: React.SFC<IProps> = ({ className }) => {
   const sites = Sites.map((site, i) => {
     return (
       <MenuItem
+        className="menu-item"
         key={i}
         name={site.name}
         text={site.text}
@@ -29,4 +30,30 @@ export default styled(Menu)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .menu-item {
+    animation: slidein 1 0.6s ease-out;
+    animation-fill-mode: backwards;
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      transform: translateX(1000px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 `
