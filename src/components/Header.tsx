@@ -18,12 +18,12 @@ const Header: React.SFC<IProps> = ({ className }) => (
 
 export default styled(Header)`
   .header {
+    padding: 20px;
     background-color: #222;
     color: white;
   }
 
   .header-logo {
-    padding: 20px;
     height: 80px;
   }
 
