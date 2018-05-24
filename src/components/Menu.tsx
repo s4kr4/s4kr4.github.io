@@ -50,10 +50,10 @@ export default styled(Menu)`
 
   @keyframes slidein {
     from {
-      transform: translateX(1000px);
+      transform: translateX(1000px) rotate(270deg);
     }
     to {
-      transform: translateX(0);
+      transform: translateX(0) rotate(0deg);
     }
   }
 `
