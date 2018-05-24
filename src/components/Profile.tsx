@@ -24,8 +24,8 @@ class Profile extends React.Component<IProps, IState> {
   "accounts": [
     "GitHub": "s4kr4",
     "Qiita": "s4kr4",
-    "Twitter": "s4kr4m4",
-    "Hatena": "s4kr4"
+    "Hatena": "s4kr4",
+    "Twitter": "s4kr4m4"
   ]
 }
 `,
