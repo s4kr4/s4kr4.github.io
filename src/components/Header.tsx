@@ -25,9 +25,27 @@ export default styled(Header)`
 
   .header-logo {
     height: 80px;
+
+    animation: swing-logo 1 0.5s ease;
+    animation-delay: 1.5s;
   }
 
   .header-title {
     font-size: 1.5em;
+  }
+
+  @keyframes swing-logo {
+    from {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(25deg);
+    }
+    75% {
+      transform: rotate(-25deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
   }
 `
