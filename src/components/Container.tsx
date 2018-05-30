@@ -18,5 +18,8 @@ const Container: React.SFC<IProps> = ({ className }) => (
 )
 
 export default styled(Container)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
 `

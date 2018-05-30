@@ -64,18 +64,26 @@ class Profile extends React.Component<IProps, IState> {
         </span>
       ))
 
-    return <pre className={this.props.className}>{displayString}</pre>
+    return (
+      <div className={this.props.className}>
+        <pre className="profile">{displayString}</pre>
+      </div>
+    )
   }
 }
 
 export default styled(Profile)`
-  display: inline-block;
-  width: 90%;
-  max-width: 600px;
-  padding-left: 10px;
-  text-align: left;
-  color: #fff;
-  background: #222;
-  border: #aaa 5px solid;
-  border-radius: 10px;
+  width: 100%;
+
+  .profile {
+    display: inline-block;
+    width: 90%;
+    max-width: 600px;
+    padding-left: 10px;
+    text-align: left;
+    color: #fff;
+    background: #222;
+    border: #aaa 5px solid;
+    border-radius: 10px;
+  }
 `
