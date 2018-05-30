@@ -20,3 +20,9 @@ injectGlobal`
 
 ReactDOM.render(<Container />, document.getElementById('root') as HTMLElement)
 registerServiceWorker()
+
+if (module.hot) {
+  module.hot.accept('./components/Container', () => {
+    ReactDOM.render(<Container />, document.getElementById('root'))
+  })
+}
