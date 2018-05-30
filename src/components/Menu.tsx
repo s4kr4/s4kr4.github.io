@@ -27,9 +27,7 @@ const Menu: React.SFC<IProps> = ({ className }) => {
 
 export default styled(Menu)`
   margin: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 
   .menu-item {
     animation: slidein 1 0.6s ease-out;
