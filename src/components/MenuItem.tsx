@@ -16,7 +16,7 @@ const MenuItem: React.SFC<IProps> = ({
   name,
   text,
   url,
-  modifier
+  modifier,
 }) => (
   <span className={className}>
     <a href={url} target="_blank" rel="noopener noreferrer" aria-label={text}>

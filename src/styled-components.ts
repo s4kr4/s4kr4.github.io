@@ -5,7 +5,7 @@ const {
   css,
   injectGlobal,
   keyframes,
-  ThemeProvider
+  ThemeProvider,
 } = styledComponents
 
 export { css, injectGlobal, keyframes, ThemeProvider }
