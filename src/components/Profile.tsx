@@ -22,10 +22,10 @@ class Profile extends React.Component<IProps, IState> {
   "nickname": "s4kr4",
   "position": "Web engineer",
   "accounts": [
-    "GitHub": "s4kr4",
-    "Qiita": "s4kr4",
-    "Hatena": "s4kr4",
-    "Twitter": "s4kr4m4"
+    "GitHub": "@s4kr4",
+    "Qiita": "@s4kr4",
+    "Hatena": "@s4kr4",
+    "Twitter": "@s4kr4_"
   ]
 }
 `,
