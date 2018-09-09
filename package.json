@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && mv build/* .",
+    "build": "node scripts/build.js && rm -rf static && mv build/* .",
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
