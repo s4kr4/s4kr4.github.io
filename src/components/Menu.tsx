@@ -27,33 +27,35 @@ const Menu: React.SFC<IProps> = ({ className }) => {
 
 export default styled(Menu)`
   margin: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 
   .menu-item {
     animation: slidein 1 0.6s ease-out;
     animation-fill-mode: backwards;
 
-    &:nth-child(2) {
+    &:nth-child(1) {
       animation-delay: 0.2s;
     }
 
-    &:nth-child(3) {
+    &:nth-child(2) {
       animation-delay: 0.4s;
     }
 
-    &:nth-child(4) {
+    &:nth-child(3) {
       animation-delay: 0.6s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.8s;
     }
   }
 
   @keyframes slidein {
     from {
-      transform: translateX(1000px) rotate(270deg);
+      transform: rotate(0deg);
     }
     to {
-      transform: translateX(0) rotate(0deg);
+      transform: rotate(360deg);
     }
   }
 `

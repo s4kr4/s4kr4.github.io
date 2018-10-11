@@ -22,15 +22,15 @@ class Profile extends React.Component<IProps, IState> {
   "nickname": "s4kr4",
   "position": "Web engineer",
   "accounts": [
-    "GitHub": "s4kr4",
-    "Qiita": "s4kr4",
-    "Hatena": "s4kr4",
-    "Twitter": "s4kr4m4"
+    "GitHub": "@s4kr4",
+    "Qiita": "@s4kr4",
+    "Hatena": "@s4kr4",
+    "Twitter": "@s4kr4_"
   ]
 }
 `,
       displayString: '',
-      interval: 0
+      interval: 0,
     }
 
     this.tick = this.tick.bind(this)
@@ -40,7 +40,7 @@ class Profile extends React.Component<IProps, IState> {
     const displayStringLength = this.state.displayString.length
 
     this.setState({
-      displayString: this.state.profileString.slice(0, displayStringLength + 1)
+      displayString: this.state.profileString.slice(0, displayStringLength + 1),
     })
 
     if (displayStringLength === this.state.profileString.length) {
@@ -50,7 +50,7 @@ class Profile extends React.Component<IProps, IState> {
 
   componentDidMount() {
     this.setState({
-      interval: window.setInterval(this.tick, 5)
+      interval: window.setInterval(this.tick, 5),
     })
   }
 
@@ -64,18 +64,26 @@ class Profile extends React.Component<IProps, IState> {
         </span>
       ))
 
-    return <pre className={this.props.className}>{displayString}</pre>
+    return (
+      <div className={this.props.className}>
+        <pre className="profile">{displayString}</pre>
+      </div>
+    )
   }
 }
 
 export default styled(Profile)`
-  display: inline-block;
-  width: 90%;
-  max-width: 600px;
-  padding-left: 10px;
-  text-align: left;
-  color: #fff;
-  background: #222;
-  border: #aaa 5px solid;
-  border-radius: 10px;
+  width: 100%;
+
+  .profile {
+    display: inline-block;
+    width: 90%;
+    max-width: 600px;
+    padding-left: 10px;
+    text-align: left;
+    color: #fff;
+    background: #222;
+    border: #aaa 5px solid;
+    border-radius: 10px;
+  }
 `

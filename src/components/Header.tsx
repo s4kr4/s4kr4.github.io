@@ -17,6 +17,8 @@ const Header: React.SFC<IProps> = ({ className }) => (
 )
 
 export default styled(Header)`
+  width: 100%;
+
   .header {
     padding: 20px;
     background-color: #222;
