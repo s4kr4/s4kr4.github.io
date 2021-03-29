@@ -1,39 +1,32 @@
 import * as React from 'react'
 
-import * as logo from '../assets/images/icon-white-250.png'
-import styled from '../styled-components'
+import styled from 'styled-components'
 
 interface IProps {
   className?: string
 }
 
-const Header: React.SFC<IProps> = ({ className }) => (
+const Header: React.FC<IProps> = ({ className }) => (
   <div className={className}>
-    <header className="header">
-      <img src={logo} className="header-logo" alt="logo" />
-      <h1 className="header-title">s4kr4</h1>
+    <header>
+      <img src="/images/icon-white-250.png" width={80} height={80} className="header-logo" />
+      <h1>s4kr4</h1>
     </header>
   </div>
 )
 
 export default styled(Header)`
   width: 100%;
+  background-color: #222;
 
-  .header {
+  header {
     padding: 20px;
-    background-color: #222;
     color: white;
   }
 
   .header-logo {
-    height: 80px;
-
     animation: swing-logo 1 0.5s ease;
     animation-delay: 1.5s;
-  }
-
-  .header-title {
-    font-size: 1.5em;
   }
 
   @keyframes swing-logo {

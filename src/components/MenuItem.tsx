@@ -1,17 +1,18 @@
 import * as React from 'react'
-import * as FontAwesome from 'react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-import styled from '../styled-components'
+import styled from 'styled-components'
 
 interface IProps {
   className?: string
-  name: string
+  name: IconDefinition
   text: string
   url: string
   modifier: string
 }
 
-const MenuItem: React.SFC<IProps> = ({
+const MenuItem: React.FC<IProps> = ({
   className,
   name,
   text,
@@ -20,11 +21,10 @@ const MenuItem: React.SFC<IProps> = ({
 }) => (
   <span className={className}>
     <a href={url} target="_blank" rel="noopener noreferrer" aria-label={text}>
-      <FontAwesome
+      <FontAwesomeIcon
         className={`menu-item-icon ${modifier}`}
-        name={name}
+        icon={name}
         size="4x"
-        tag="i"
       />
     </a>
   </span>

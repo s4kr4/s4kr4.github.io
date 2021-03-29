@@ -1,5 +1,9 @@
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core"
+import { faGithub, faQuora, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faEdit } from "@fortawesome/free-solid-svg-icons"
+
 interface ISite {
-  name: string
+  icon: IconDefinition
   text: string
   url: string
   option: string
@@ -8,30 +12,30 @@ interface ISite {
 
 const Sites: ISite[] = [
   {
-    name: 'github',
+    icon: faGithub,
     text: 'GitHub',
     url: 'https://github.com/s4kr4',
     option: 'spin',
     modifier: 'github-icon',
   },
   {
-    name: 'quora',
+    icon: faQuora,
     text: 'Qiita',
     url: 'https://qiita.com/s4kr4',
     option: 'vertical',
     modifier: 'qiita-icon',
   },
   {
-    name: 'edit',
+    icon: faEdit,
     text: 'Blog',
     url: 'http://s4kr4.hatenablog.com/',
     option: 'vertical',
     modifier: 'hatenablog-icon',
   },
   {
-    name: 'twitter',
+    icon: faTwitter,
     text: 'Twitter',
-    url: 'https://twitter.com/s4kr4m4',
+    url: 'https://twitter.com/s4kr4_',
     option: 'vertical',
     modifier: 'twitter-icon',
   },

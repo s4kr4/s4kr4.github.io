@@ -1,20 +1,20 @@
 import * as React from 'react'
 
-import Sites from '../assets/Sites'
-import styled from '../styled-components'
+import Sites from '../Sites'
+import styled from 'styled-components'
 import MenuItem from './MenuItem'
 
 interface IProps {
   className?: string
 }
 
-const Menu: React.SFC<IProps> = ({ className }) => {
+const Menu: React.FC<IProps> = ({ className }) => {
   const sites = Sites.map((site, i) => {
     return (
       <MenuItem
         className="menu-item"
         key={i}
-        name={site.name}
+        name={site.icon}
         text={site.text}
         url={site.url}
         modifier={site.modifier}
