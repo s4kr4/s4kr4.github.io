@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 import styled from 'styled-components'
 
 interface IProps {
   className?: string
-  name: IconDefinition
+  name: IconProp
   text: string
   url: string
   modifier: string

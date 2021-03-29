@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 
 import Header from './Header'
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import Menu from './Menu'
 
 type Props = {
@@ -68,5 +68,4 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
   </div>
 )
 
-export default styled(Layout)`
-`
+export default Layout

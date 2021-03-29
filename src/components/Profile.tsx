@@ -29,7 +29,7 @@ const Profile: React.FC<IProps> = ({ className }) => {
     const chars = profileString.slice(0, displayString.length + 1)
     const brForAdd = profileRow - chars.split('\n').length
     setDisplayString(chars + '\n'.repeat(brForAdd))
-  }, 25)
+  }, 40)
   
   return (
     <div className={className}>
