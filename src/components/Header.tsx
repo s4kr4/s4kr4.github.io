@@ -9,7 +9,13 @@ interface IProps {
 const Header: React.FC<IProps> = ({ className }) => (
   <div className={className}>
     <header>
-      <img src="/images/icon-white-250.png" width={80} height={80} className="header-logo" />
+      <img
+        src="/images/icon-white-250.png"
+        alt="icon"
+        className="header-logo"
+        width={80}
+        height={80}
+      />
       <h1>s4kr4</h1>
     </header>
   </div>
