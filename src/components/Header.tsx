@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import * as React from 'react'
 
 import styled from 'styled-components'
@@ -17,6 +18,22 @@ const Header: React.FC<IProps> = ({ className }) => (
         height={80}
       />
       <h1>s4kr4</h1>
+      <nav>
+        <Link href="/">
+          <a>Home</a>
+        </Link>{' '}
+        |{' '}
+        <Link href="/about">
+          <a>About</a>
+        </Link>{' '}
+        |{' '}
+        <Link href="/works">
+          <a>Works</a>
+        </Link>|{' '}
+        <Link href="/skills">
+          <a>Skills</a>
+        </Link>
+      </nav>
     </header>
   </div>
 )
@@ -26,8 +43,17 @@ export default styled(Header)`
   background-color: #222;
 
   header {
-    padding: 20px;
+    padding: 20px 20px 5px;
+    color: #aaa;
+  }
+
+  h1 {
     color: white;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
   }
 
   .header-logo {

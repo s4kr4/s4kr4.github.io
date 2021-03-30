@@ -3,7 +3,6 @@ import Head from 'next/head'
 
 import Header from './Header'
 import { createGlobalStyle } from 'styled-components'
-import Menu from './Menu'
 
 type Props = {
   children?: ReactNode
@@ -14,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    font-family: Inconsolata;
+    font-family: Inconsolata, "Helvetica Neue", "ヒラギノ角ゴ ProN W3";
   }
 
   a {
@@ -45,20 +44,6 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <GlobalStyle />
     <main>
       <Header />
-      {/* <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/test">
-          <a>Test Page</a>
-        </Link>
-      </nav> */}
-      <Menu />
       {children}
       <footer>
         <hr />
