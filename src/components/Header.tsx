@@ -3,10 +3,6 @@ import * as React from 'react'
 
 import styled from 'styled-components'
 
-interface IProps {
-  className?: string
-}
-
 const Header: React.FC<IProps> = ({ className }) => (
   <div className={className}>
     <header>

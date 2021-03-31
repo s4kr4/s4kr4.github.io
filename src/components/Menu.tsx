@@ -4,10 +4,6 @@ import Sites from '../sites'
 import styled from 'styled-components'
 import MenuItem from './MenuItem'
 
-interface IProps {
-  className?: string
-}
-
 const Menu: React.FC<IProps> = ({ className }) => {
   const sites = Sites.map((site, i) => {
     return (

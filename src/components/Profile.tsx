@@ -4,10 +4,6 @@ import useInterval from 'use-interval'
 
 import styled from 'styled-components'
 
-interface IProps {
-  className?: string
-}
-
 const profileString = `
 {
   "nickname": "s4kr4",
