@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inconsolata, "Helvetica Neue", "ヒラギノ角ゴ ProN W3";
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+footer {
+  margin: 2rem 0 0 0;
+}

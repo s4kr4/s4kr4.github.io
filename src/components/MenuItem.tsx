@@ -5,7 +5,6 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import styled from 'styled-components'
 
 interface IProps {
-  className?: string
   name: IconProp
   text: string
   url: string
@@ -13,13 +12,12 @@ interface IProps {
 }
 
 const MenuItem: React.FC<IProps> = ({
-  className,
   name,
   text,
   url,
   modifier,
 }) => (
-  <span className={className}>
+  <span className="mx-3">
     <a href={url} target="_blank" rel="noopener noreferrer" aria-label={text}>
       <FontAwesomeIcon
         className={`menu-item-icon ${modifier}`}
