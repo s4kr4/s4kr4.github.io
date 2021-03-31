@@ -11,7 +11,7 @@ const Article = styled.article`
 `
 
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.6rem;
 `
 
 const Skills = () => (
