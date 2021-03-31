@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Sites from '../Sites'
+import Sites from '../sites'
 import styled from 'styled-components'
 import MenuItem from './MenuItem'
 
