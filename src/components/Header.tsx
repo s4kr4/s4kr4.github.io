@@ -27,11 +27,12 @@ const Header: React.FC<IProps> = ({ className }) => (
           <a>About</a>
         </Link>{' '}
         |{' '}
-        <Link href="/works">
-          <a>Works</a>
-        </Link>|{' '}
         <Link href="/skills">
           <a>Skills</a>
+        </Link>{' '}
+        |{' '}
+        <Link href="/works">
+          <a>Works</a>
         </Link>
       </nav>
     </header>
