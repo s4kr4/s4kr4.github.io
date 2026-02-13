@@ -1,43 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-import Skills from '../skills'
+import { skills } from "../data/skills";
 
-const Table = styled.table`
-  border-collapse: collapse;
-`
-
-const Th = styled.th`
-  padding: 0.7rem;
-  text-align: left;
-  border-top: 2px solid #aaa;
-  border-bottom: 2px solid #aaa;
-`
-
-const Td = styled.td`
-  text-align: left;
-  border-top: 2px solid #aaa;
-  border-bottom: 2px solid #aaa;
-`
-
-const Columns: React.FC = () => {
+export function SkillTable() {
   return (
-    <>{
-      Skills.map(skill => 
-        <tr>
-          <Th>{skill.category}</Th>
-          <Td>{skill.skill.join(', ')}</Td>
-        </tr>
-      )
-    }</>
-  )
+    <table className="border-collapse">
+      <tbody>
+        {skills.map((skill) => (
+          <tr key={skill.category}>
+            <th className="p-[0.7rem] text-left border-y-2 border-[#aaa]">
+              {skill.category}
+            </th>
+            <td className="text-left border-y-2 border-[#aaa]">
+              {skill.skill.join(", ")}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
-
-const SkillTable: React.FC = () => {
-  return (
-    <Table>
-      <Columns />
-    </Table>
-  )
-}
-
-export default SkillTable

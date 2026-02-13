@@ -1,75 +1,35 @@
-import Link from 'next/link'
-import * as React from 'react'
+import { Link } from "@tanstack/react-router";
 
-import styled from 'styled-components'
-
-const Header: React.FC<IProps> = ({ className }) => (
-  <div className={className}>
-    <header>
-      <img
-        src="/images/icon-white-250.png"
-        alt="icon"
-        className="header-logo"
-        width={80}
-        height={80}
-      />
-      <h1>s4kr4</h1>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/skills">
-          <a>Skills</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/works">
-          <a>Works</a>
-        </Link>
-      </nav>
-    </header>
-  </div>
-)
-
-export default styled(Header)`
-  width: 100%;
-  background-color: #222;
-
-  header {
-    padding: 20px 20px 5px;
-    color: #aaa;
-  }
-
-  h1 {
-    color: white;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .header-logo {
-    animation: swing-logo 1 0.5s ease;
-    animation-delay: 1.5s;
-  }
-
-  @keyframes swing-logo {
-    from {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(25deg);
-    }
-    75% {
-      transform: rotate(-25deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-`
+export function Header() {
+  return (
+    <div className="w-full bg-[#222]">
+      <header className="px-5 pt-5 pb-[5px] text-[#aaa] flex flex-col items-center">
+        <img
+          src="/images/icon-white-250.png"
+          alt="icon"
+          className="animate-[swing-logo_0.5s_ease_1.5s_1]"
+          width={80}
+          height={80}
+        />
+        <h1 className="text-white text-[2em] font-bold">s4kr4</h1>
+        <nav className="mt-1 text-white">
+          <Link to="/" className="text-white no-underline">
+            Home
+          </Link>
+          {" | "}
+          <Link to="/about" className="text-white no-underline">
+            About
+          </Link>
+          {" | "}
+          <Link to="/skills" className="text-white no-underline">
+            Skills
+          </Link>
+          {" | "}
+          <Link to="/works" className="text-white no-underline">
+            Works
+          </Link>
+        </nav>
+      </header>
+    </div>
+  );
+}
