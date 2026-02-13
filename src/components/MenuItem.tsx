@@ -1,57 +1,22 @@
-import * as React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import type { LucideIcon } from "lucide-react";
 
-import styled from 'styled-components'
-
-interface IProps {
-  className?: string
-  name: IconProp
-  text: string
-  url: string
-  modifier: string
+interface MenuItemProps {
+  icon: LucideIcon;
+  text: string;
+  url: string;
+  color: string;
+  delay: string;
 }
 
-const MenuItem: React.FC<IProps> = ({
-  className,
-  name,
-  text,
-  url,
-  modifier,
-}) => (
-  <span className={className}>
-    <a href={url} target="_blank" rel="noopener noreferrer" aria-label={text}>
-      <FontAwesomeIcon
-        className={`menu-item-icon ${modifier}`}
-        icon={name}
-        size="4x"
-      />
-    </a>
-  </span>
-)
-
-export default styled(MenuItem)`
-  margin: 10px;
-  display: inline-block;
-  transition: 0.3s;
-  transform: scale(1);
-
-  &:hover {
-    transform: scale(1.3);
-  }
-
-  .github-icon {
-    color: #24292e;
-  }
-
-  .qiita-icon {
-    color: #79b74a;
-  }
-
-  .hatenablog-icon {
-  }
-
-  .twitter-icon {
-    color: #1da1f2;
-  }
-`
+export function MenuItem({ icon: Icon, text, url, color, delay }: MenuItemProps) {
+  return (
+    <span
+      className="m-2.5 inline-block scale-100 transition-transform duration-300 hover:scale-130 animate-[slidein_0.6s_ease-out_1_backwards]"
+      style={{ animationDelay: delay }}
+    >
+      <a href={url} target="_blank" rel="noopener noreferrer" aria-label={text}>
+        <Icon size={48} style={{ color }} />
+      </a>
+    </span>
+  );
+}

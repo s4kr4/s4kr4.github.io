@@ -1,8 +1,4 @@
-import * as React from 'react'
-import { useState } from 'react'
-import useInterval from 'use-interval'
-
-import styled from 'styled-components'
+import { useState, useEffect, useRef } from "react";
 
 const profileString = `
 {
@@ -15,44 +11,43 @@ const profileString = `
     "Twitter": "@s4kr4_"
   ]
 }
-`
-const profileRow = profileString.split('\n').length
+`;
+const profileRows = profileString.split("\n").length;
 
-const Profile: React.FC<IProps> = ({ className }) => {
-  const [displayString, setDisplayString] = useState('\n'.repeat(profileRow - 1))
+export function Profile() {
+  const [displayString, setDisplayString] = useState(
+    "\n".repeat(profileRows - 1),
+  );
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  useInterval(() => {
-    const chars = profileString.slice(0, displayString.length + 1)
-    const brForAdd = profileRow - chars.split('\n').length
-    setDisplayString(chars + '\n'.repeat(brForAdd))
-  }, 40)
-  
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setDisplayString((prev) => {
+        const next = profileString.slice(0, prev.length + 1);
+        if (next.length >= profileString.length) {
+          if (intervalRef.current) clearInterval(intervalRef.current);
+          return profileString;
+        }
+        const brForAdd = profileRows - next.split("\n").length;
+        return next + "\n".repeat(brForAdd);
+      });
+    }, 40);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
   return (
-    <div className={className}>
-      <pre className="profile">
-        {displayString
-          .split('\n')
-          .map((item, i) => (
-            <span key={i}>
-              {item}
-              <br />
-            </span>
-          ))}
+    <div>
+      <pre className="inline-block w-[90%] max-w-[600px] pl-2.5 text-left text-white bg-[#222] border-[5px] border-[#aaa] rounded-[10px]">
+        {displayString.split("\n").map((item, i) => (
+          <span key={i}>
+            {item}
+            <br />
+          </span>
+        ))}
       </pre>
     </div>
-  )
+  );
 }
-
-export default styled(Profile)`
-  pre {
-    display: inline-block;
-    width: 90%;
-    max-width: 600px;
-    padding-left: 10px;
-    text-align: left;
-    color: #fff;
-    background: #222;
-    border: #aaa 5px solid;
-    border-radius: 10px;
-  }
-`
